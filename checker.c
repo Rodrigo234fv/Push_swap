@@ -6,13 +6,13 @@
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:46:13 by rodrigo           #+#    #+#             */
-/*   Updated: 2022/12/13 19:06:55 by rodrigo          ###   ########.fr       */
+/*   Updated: 2022/12/28 16:41:43 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int check_if_int (char **argv)
+int check_int (char **argv)
 {
 	int	i;
 	int	j;
@@ -36,7 +36,7 @@ static int check_if_int (char **argv)
 	return (1);
 }
 
-static int check_if_double (char **argv)
+int check_double (char **argv)
 {
 	int	i;
 	int	j;
@@ -45,7 +45,7 @@ static int check_if_double (char **argv)
 	while (argv[i])
 	{
 		j = 1;
-		while (argv[j])
+		while (argv[j] && j < i)
 		{
 			if (j != 1 && ft_compare_nums(argv[i], argv[j]) == 0)
 				return (0);
@@ -84,26 +84,29 @@ int	ft_compare_nums(const char *s1, const char *s2)
 
 }
 
-int arg_is_zero (char **argv)
+int arg_zero (char **argv)
 {
 	int	i;
 
-	i = 0;
-	while (argv[i])
-		i++;
-	return (i);
+	i = 1;
+	if (!argv[i])
+		return (0);
+	else
+		return (1);
 }
 
-int main (int argc, char **argv)
+int all_checker(char **argv)
 {
-	if (arg_is_zero(argv) == 0)
-		printf("Error");
-	return (0);
-	
+	if (arg_zero(argv) == 0 || check_double(argv) == 0 || check_int(argv) == 0)
+		return (0);
+	else
+		return (1);
 }
 
-/* 
-int checker_all (char **argv)
+/* int main (int argc, char **argv)
 {
-	
+	if (all_checker(argv) == 0)
+		return (0);
+	else 
+		printf ("All conditions met success!");
 } */
