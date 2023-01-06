@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array_int.c                                        :+:      :+:    :+:   */
+/*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 17:03:31 by rodrigo           #+#    #+#             */
-/*   Updated: 2023/01/04 16:17:09 by rodrigo          ###   ########.fr       */
+/*   Created: 2023/01/04 15:35:36 by rodrigo           #+#    #+#             */
+/*   Updated: 2023/01/04 16:16:18 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Here I will create an array of ints for the given number
- of argc's */
-
 #include "push_swap.h"
 
-void	create_arr(t_all *all, int argc, char **argv)
-{
-	int	i;
+/* Here I am using the XOR swap algo. This algo is perfect 
+ for our push_swap, since we wont get the same number twice */
 
-	i = 0;
-	all->size = argc - 1;
-	all->array = malloc((all->size + 1) * sizeof(int));
-	while(i < all->size)
+void	sa(t_all *all)
+{
+	if (all->size >= 2)
 	{
-		all->array[i] = atoi(argv[i + 1]);
-		i++;
+		all->array[0] ^= all->array[1];
+		all->array[1] ^= all->array[0];
+		all->array[0] ^= all->array[1];
 	}
-	all->array[i] = 0;
 }
 
-/* This is just a tester */
 
-/* int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
 	t_all all;
 	create_arr(&all, argc, argv);
@@ -40,7 +34,13 @@ void	create_arr(t_all *all, int argc, char **argv)
 	{
 		printf("%d", all.array[i]);
 	}
-
 	printf("\n");
-	free(all.array);
-} */
+	
+	sa(&all);
+	
+	for (int i = 0; i < all.size; i++)
+	{
+		printf("%d", all.array[i]);
+	}
+	printf("\n");
+}
