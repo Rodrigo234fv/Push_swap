@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:33:54 by rodrigo           #+#    #+#             */
-/*   Updated: 2023/01/04 16:22:02 by rodrigo          ###   ########.fr       */
+/*   Updated: 2023/01/06 16:48:06 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@ void	create_arr(t_all *all, int argc, char **argv);
 /* Performed Operations */
 
 void	sa(t_all *all);
+
+/* Algorithm */
+
+int	get_index(t_all *all);
 
 /* Utils */
 

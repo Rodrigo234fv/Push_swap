@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 15:35:36 by rodrigo           #+#    #+#             */
-/*   Updated: 2023/01/04 16:16:18 by rodrigo          ###   ########.fr       */
+/*   Updated: 2023/01/06 18:06:39 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,71 @@ void	sa(t_all *all)
 	}
 }
 
-
-int main(int argc, char** argv)
+/* void	sa(t_all *all)
 {
-	t_all all;
+	ss(all, "sa");
+}
+void	sb(t_all *all)
+{
+	ss(a, null);
+	ss(b, null);
+	
+}
+
+void	ss(t_all *all)
+{
+	ss(all, "sb");
+} */
+
+
+void	ra(t_all *all)
+{
+	int	i;
+	int	temp;
+
+	temp = all->array[0];
+	i = 0;
+	while (i < all->size)
+	{
+		all->array[i] = all->array[i + 1];
+		i++;
+	}
+	all->array[all->size - 1] = temp;
+}
+
+void	rra(t_all *all)
+{
+	int	i;
+	int	temp;
+
+	temp = all->array[all->size - 1];
+	i = all->size - 1;
+	while (i > 0)
+	{
+		all->array[i] = all->array[i - 1];
+		i--;
+	}
+	all->array[0] = temp;
+}
+
+
+
+
+/* int	main(int argc, char **argv)
+{
+	t_all	all;
+
 	create_arr(&all, argc, argv);
 	for (int i = 0; i < all.size; i++)
 	{
-		printf("%d", all.array[i]);
+		printf("%d ", all.array[i]);
 	}
 	printf("\n");
-	
-	sa(&all);
-	
+	rra(&all);
 	for (int i = 0; i < all.size; i++)
 	{
-		printf("%d", all.array[i]);
+		printf("%d ", all.array[i]);
 	}
 	printf("\n");
 }
+ */

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:36:54 by rodrigo           #+#    #+#             */
-/*   Updated: 2023/01/04 13:13:00 by rodrigo          ###   ########.fr       */
+/*   Updated: 2023/01/06 14:23:53 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 #include "push_swap.h"
 
-int main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	if (argc > 0)
 	{
 		if (all_checker(argv) == 0)
 			printf ("Error\n");
 		else
-			printf("all good"); // here ill call push_swap
+			printf ("all good"); // here ill call push_swap
 	}
 	return (0);
 }

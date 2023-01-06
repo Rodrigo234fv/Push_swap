@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo.c                                             :+:      :+:    :+:   */
+/*   algo_3num.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/06 14:47:50 by rode-alb          #+#    #+#             */
-/*   Updated: 2023/01/06 17:49:51 by rode-alb         ###   ########.fr       */
+/*   Created: 2023/01/06 17:33:25 by rode-alb          #+#    #+#             */
+/*   Updated: 2023/01/06 18:13:54 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* I will do 3 algos so this */
-
-
-
-/* This func gets the position of the smallest number in stack A
-
-This works because, we identify the smallest number in stack A and
- then we ra or rra... pb to push it to stack be and we rinse and repeat */
-
-int	get_index(t_all *all)
+int	get_min(t_all *all)
 {
 	int	i;
 	int	j;
@@ -39,15 +30,35 @@ int	get_index(t_all *all)
 	return (j);
 }
 
-
-
-
-
-int	main(int argc, char **argv)
+int	get_max(t_all *all)
 {
-	t_all	all;
+	int	i;
+	int	j;
 
-	create_arr(&all, argc, argv);
-	printf("%d", get_index(&all));
+	i = 1;
+	j = 0;
+	while (i < all->size)
+	{
+		if (all->array[i] > all->array[j])
+			j = i;
+		i++;
+	}
+	return (j);
+}
 
+void	algo3(t_all *all)
+{
+	int	max;
+	int	min;
+
+	max = get_max(&all);
+	min = get_min(&all);
+
+	if (max == 2 && min == 1)
+	{
+		sa(all);
+		
+	}
+
+	// conditions
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   array_int.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 17:03:31 by rodrigo           #+#    #+#             */
-/*   Updated: 2023/01/04 16:17:09 by rodrigo          ###   ########.fr       */
+/*   Updated: 2023/01/06 18:10:44 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@ void	create_arr(t_all *all, int argc, char **argv)
 	i = 0;
 	all->size = argc - 1;
 	all->array = malloc((all->size + 1) * sizeof(int));
-	while(i < all->size)
+	while (i < all->size)
 	{
 		all->array[i] = atoi(argv[i + 1]);
 		i++;
 	}
-	all->array[i] = 0;
 }
 
 /* This is just a tester */

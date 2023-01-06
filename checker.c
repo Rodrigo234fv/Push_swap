@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:46:13 by rodrigo           #+#    #+#             */
-/*   Updated: 2022/12/28 16:41:43 by rodrigo          ###   ########.fr       */
+/*   Updated: 2023/01/06 14:19:46 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int check_int (char **argv)
+int	check_int(char **argv)
 {
 	int	i;
 	int	j;
@@ -36,7 +36,7 @@ int check_int (char **argv)
 	return (1);
 }
 
-int check_double (char **argv)
+int	check_double(char **argv)
 {
 	int	i;
 	int	j;
@@ -84,7 +84,7 @@ int	ft_compare_nums(const char *s1, const char *s2)
 
 }
 
-int arg_zero (char **argv)
+int	arg_zero(char **argv)
 {
 	int	i;
 
@@ -95,7 +95,7 @@ int arg_zero (char **argv)
 		return (1);
 }
 
-int all_checker(char **argv)
+int	all_checker(char **argv)
 {
 	if (arg_zero(argv) == 0 || check_double(argv) == 0 || check_int(argv) == 0)
 		return (0);
