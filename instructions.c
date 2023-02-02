@@ -3,93 +3,99 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 15:35:36 by rodrigo           #+#    #+#             */
-/*   Updated: 2023/01/06 18:06:39 by rode-alb         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:56:03 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Here I am using the XOR swap algo. This algo is perfect 
- for our push_swap, since we wont get the same number twice */
+/* sa */
 
-void	sa(t_all *all)
+void	sa(t_node *stack_a)
 {
-	if (all->size >= 2)
-	{
-		all->array[0] ^= all->array[1];
-		all->array[1] ^= all->array[0];
-		all->array[0] ^= all->array[1];
-	}
-}
-
-/* void	sa(t_all *all)
-{
-	ss(all, "sa");
-}
-void	sb(t_all *all)
-{
-	ss(a, null);
-	ss(b, null);
+	t_node	*first;
+	t_node	*second;
+	int		temp;
 	
+	if (stack_a == NULL || stack_a->next == NULL)
+		return ;
+	
+	first = stack_a;
+	second = stack_a->next;
+	temp = first->data;
+	first->data = second->data;
+	second->data = temp;
 }
 
-void	ss(t_all *all)
+/* sb */
+
+void	sb(t_node *stack_b)
 {
-	ss(all, "sb");
-} */
-
-
-void	ra(t_all *all)
-{
-	int	i;
-	int	temp;
-
-	temp = all->array[0];
-	i = 0;
-	while (i < all->size)
-	{
-		all->array[i] = all->array[i + 1];
-		i++;
-	}
-	all->array[all->size - 1] = temp;
-}
-
-void	rra(t_all *all)
-{
-	int	i;
-	int	temp;
-
-	temp = all->array[all->size - 1];
-	i = all->size - 1;
-	while (i > 0)
-	{
-		all->array[i] = all->array[i - 1];
-		i--;
-	}
-	all->array[0] = temp;
+	t_node	*first;
+	t_node	*second;
+	int		temp;
+	
+	if (stack_b == NULL || stack_b->next == NULL)
+		return ;
+	
+	first = stack_b;
+	second = stack_b->next;
+	temp = first->data;
+	first->data = second->data;
+	second->data = temp;
 }
 
 
+/* ss */
 
-
-/* int	main(int argc, char **argv)
+void ss(t_node *stack_a, t_node *stack_b)
 {
-	t_all	all;
-
-	create_arr(&all, argc, argv);
-	for (int i = 0; i < all.size; i++)
-	{
-		printf("%d ", all.array[i]);
-	}
-	printf("\n");
-	rra(&all);
-	for (int i = 0; i < all.size; i++)
-	{
-		printf("%d ", all.array[i]);
-	}
-	printf("\n");
+	sa(stack_a);
+	sb(stack_b);
 }
- */
+
+/* pa */
+
+void pa(t_node **stack_a, t_node **stack_b)
+{
+	t_node *temp;
+	
+	if (stack_b == NULL)
+		return ;
+
+	temp = *stack_b;
+	*stack_b = temp->next;
+	temp-> next = *stack_a;
+	*stack_a = temp;
+}
+
+/* pb */
+
+void pb(t_node **stack_a, t_node **stack_b)
+{
+	t_node *temp;
+	
+	if (stack_a == NULL)
+		return ;
+
+	temp = *stack_a;
+	*stack_a = temp->next;
+	temp-> next = *stack_b;
+	*stack_b = temp;
+}
+
+
+/* ra */
+
+/* rb */
+
+/* rr */
+
+/* rra */
+
+/* rrb */
+
+/* rrr */
