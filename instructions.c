@@ -6,7 +6,7 @@
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 15:35:36 by rodrigo           #+#    #+#             */
-/*   Updated: 2023/02/02 12:56:03 by rodrigo          ###   ########.fr       */
+/*   Updated: 2023/02/02 15:25:55 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,11 +90,43 @@ void pb(t_node **stack_a, t_node **stack_b)
 
 /* ra */
 
+void ra(t_node **stack)
+{
+	t_node	*temp;
+
+	temp = *stack;
+	if (*stack == NULL || (*stack)->next == NULL)
+		return ;
+	while (temp->next != NULL)
+		temp = temp->next;
+	temp->next = *stack;
+	*stack =(*stack)->next;
+	temp->next->next = NULL;
+}
+
 /* rb */
 
 /* rr */
 
 /* rra */
+
+void rra(t_node **stack)
+{
+	t_node	*temp;
+	t_node	*last;
+	
+	temp = *stack;
+	if(*stack == NULL || (*stack)->next == NULL)
+		return ;
+	while (temp->next->next != NULL)
+		temp = temp->next;
+	last = temp->next;
+	temp->next = NULL;
+	last->next = *stack;
+	*stack = last;
+	
+	
+}
 
 /* rrb */
 

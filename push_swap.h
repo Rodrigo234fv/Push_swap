@@ -6,7 +6,7 @@
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:33:54 by rodrigo           #+#    #+#             */
-/*   Updated: 2023/02/02 12:55:53 by rodrigo          ###   ########.fr       */
+/*   Updated: 2023/02/02 16:31:35 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,12 @@ int			all_checker(char **argv);
 
 /* List Creation */
 
+t_node		*create_list(int size, int *args);
+int			list_size(t_node *stack);
+void		print_list(t_node *stack);
 
 
 
-
-
-
-/* Array Creation */
-
-void		create_arr(t_all *all, int argc, char **argv);
 
 /* Performed Operations */
 
@@ -63,11 +60,13 @@ void		sb(t_node *stack_b);
 void		ss(t_node *stack_a, t_node *stack_b);
 void		pa(t_node **stack_a, t_node **stack_b);
 void		pb(t_node **stack_a, t_node **stack_b);
+void		ra(t_node **stack);
+void		rra(t_node **stack);
 
+/* Helper Functions */
 
-/* Algorithm */
-
-int			get_index(t_all *all);
+int			get_max(t_node *stack);
+int			get_min(t_node *stack);
 
 /* Utils */
 

@@ -3,62 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   algo_3num.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/06 17:33:25 by rode-alb          #+#    #+#             */
-/*   Updated: 2023/01/06 18:13:54 by rode-alb         ###   ########.fr       */
+/*   Created: 2023/02/02 15:59:24 by rodrigo           #+#    #+#             */
+/*   Updated: 2023/02/02 16:47:03 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_min(t_all *all)
+/* For this algo we only need Stack A. We wont need operations of Stack B */
+
+void small_algo(t_node *stack_a)
 {
-	int	i;
-	int	j;
-
-	i = 1;
-	j = 0;
-	while (all->array[i] != 0)
+	if (get_max == 2 && get_min == 1)
+		sa(stack_a);
+	else if (get_max == 0 && get_min == 2)
 	{
-		if (all->array[i] < all->array[j])
-		{
-			j = i;
-		}
-		i++;
+		sa(stack_a);
+		rra(stack_a);
 	}
-	return (j);
-}
-
-int	get_max(t_all *all)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	j = 0;
-	while (i < all->size)
+	else if (get_max == 0 && get_min == 1)
+		ra(stack_a);
+	else if (get_max == 1 && get_min == 2)
+		rra(stack_a);
+	else
 	{
-		if (all->array[i] > all->array[j])
-			j = i;
-		i++;
+		sa(stack_a);
+		ra(stack_a);
 	}
-	return (j);
-}
-
-void	algo3(t_all *all)
-{
-	int	max;
-	int	min;
-
-	max = get_max(&all);
-	min = get_min(&all);
-
-	if (max == 2 && min == 1)
-	{
-		sa(all);
-		
-	}
-
-	// conditions
 }
