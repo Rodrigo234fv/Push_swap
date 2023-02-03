@@ -6,7 +6,7 @@
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:33:54 by rodrigo           #+#    #+#             */
-/*   Updated: 2023/02/02 16:31:35 by rodrigo          ###   ########.fr       */
+/*   Updated: 2023/02/03 18:40:46 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ void		print_list(t_node *stack);
 
 /* Performed Operations */
 
-void		sa(t_node *stack_a);
-void		sb(t_node *stack_b);
-void		ss(t_node *stack_a, t_node *stack_b);
+void		sa(t_node **stack_a);
+void		sb(t_node **stack_b);
+void		ss(t_node **stack_a, t_node **stack_b);
 void		pa(t_node **stack_a, t_node **stack_b);
 void		pb(t_node **stack_a, t_node **stack_b);
 void		ra(t_node **stack);
@@ -65,10 +65,16 @@ void		rra(t_node **stack);
 
 /* Helper Functions */
 
-int			get_max(t_node *stack);
-int			get_min(t_node *stack);
+int			get_max(t_node **stack);
+int			get_min(t_node **stack);
+int			get_max_num(t_node **stack);
+int			get_number(t_node **stack, int n);
 
-/* Utils */
+/* Algo For 3 & 5 nums */
+
+void		small_algo(t_node **stack_a);
+void		small_algo2(t_node **stack_a, t_node **stack_b);
+void		stop_when_empty(t_node **stack_a, t_node **stack_b);
 
 // int	ft_atoi(const char *str);
 

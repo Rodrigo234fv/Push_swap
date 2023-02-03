@@ -6,7 +6,7 @@
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 15:35:36 by rodrigo           #+#    #+#             */
-/*   Updated: 2023/02/02 15:25:55 by rodrigo          ###   ########.fr       */
+/*   Updated: 2023/02/02 19:42:52 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 /* sa */
 
-void	sa(t_node *stack_a)
+void	sa(t_node **stack_a)
 {
 	t_node	*first;
 	t_node	*second;
 	int		temp;
 	
-	if (stack_a == NULL || stack_a->next == NULL)
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;
 	
-	first = stack_a;
-	second = stack_a->next;
+	first = *stack_a;
+	second = (*stack_a)->next;
 	temp = first->data;
 	first->data = second->data;
 	second->data = temp;
@@ -32,17 +32,17 @@ void	sa(t_node *stack_a)
 
 /* sb */
 
-void	sb(t_node *stack_b)
+void	sb(t_node **stack_b)
 {
 	t_node	*first;
 	t_node	*second;
 	int		temp;
 	
-	if (stack_b == NULL || stack_b->next == NULL)
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
 		return ;
 	
-	first = stack_b;
-	second = stack_b->next;
+	first = *stack_b;
+	second = (*stack_b)->next;
 	temp = first->data;
 	first->data = second->data;
 	second->data = temp;
@@ -51,7 +51,7 @@ void	sb(t_node *stack_b)
 
 /* ss */
 
-void ss(t_node *stack_a, t_node *stack_b)
+void ss(t_node **stack_a, t_node **stack_b)
 {
 	sa(stack_a);
 	sb(stack_b);
