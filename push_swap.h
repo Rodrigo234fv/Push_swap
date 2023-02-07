@@ -6,7 +6,7 @@
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:33:54 by rodrigo           #+#    #+#             */
-/*   Updated: 2023/02/03 18:40:46 by rodrigo          ###   ########.fr       */
+/*   Updated: 2023/02/07 10:47:15 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int			get_number(t_node **stack, int n);
 void		small_algo(t_node **stack_a);
 void		small_algo2(t_node **stack_a, t_node **stack_b);
 void		stop_when_empty(t_node **stack_a, t_node **stack_b);
+void		numsleft_3(t_node **stack_a, t_node **stack_b);
 
 // int	ft_atoi(const char *str);
 

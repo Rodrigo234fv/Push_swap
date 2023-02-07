@@ -6,7 +6,7 @@
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 13:07:07 by rodrigo           #+#    #+#             */
-/*   Updated: 2023/02/03 18:41:58 by rodrigo          ###   ########.fr       */
+/*   Updated: 2023/02/07 10:46:48 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,9 +105,7 @@ int main (int argc, char **argv)
 	printf("List B:\n");
 	print_list(stack_b);
 
-	// small_algo2(&stack_a, &stack_b);
-
-	stop_when_empty(&stack_a, &stack_b);
+	small_algo2(&stack_a, &stack_b);
 
 	printf("List A: \n");
 	print_list(stack_a);
